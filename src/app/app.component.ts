@@ -25,18 +25,13 @@ export class AppComponent {
     this.maskInput.valueChanges.pipe(
       map(value => {
         const x = Array.from(value);
-        for (let i = 1; i <= x.length; i++) {
-          if (i === 3 + i - 1) {
-            console.log('chen di')
+        for (let i = 0; i < x.length; i++) {
+          if (i === t) {
+            t+=4;
             x.splice(i, 0, '-')
-          } else {
-            console.log('sai dau roi')
           }
-          /* if([3,7,11,].includes(i)) {
-             x.splice(i, 0, '-')
-           }*/
         }
-        return { num: x.join('') };
+        return { num: x.join(''), t };
       })
     ).subscribe((e) => {
       console.log(e)
