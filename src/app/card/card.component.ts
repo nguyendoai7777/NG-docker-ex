@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-card',
@@ -10,5 +12,9 @@ export class CardComponent implements OnInit {
   constructor() {
   }
   ngOnInit(): void {
+    interval(1000).pipe(
+      take(20),
+
+    )
   }
 }
