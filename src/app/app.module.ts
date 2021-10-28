@@ -13,9 +13,9 @@ import { NgxMaskModule } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { CounterComponent } from './counter/counter.component';
 import { CounterModule } from './counter/counter.module';
 import { EffectsModule } from '@ngrx/effects';
+import { CounterSliceModule } from './counter-slice/counter-slice.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { EffectsModule } from '@ngrx/effects';
     NgxMaskModule.forRoot(),
     CardModule,
     CounterModule,
+    CounterSliceModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({}, {}),
