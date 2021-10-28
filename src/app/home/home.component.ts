@@ -10,23 +10,20 @@ import { fromEvent, zip } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   card = true;
-  maskInput = new FormControl('');
-  mss = '';
+  maskInput = new FormControl('')
+  mss = ''
   constructor() {
   }
   ngOnInit(): void {
-    console.log(this.mss)
-    let t = 3;
     this.maskInput.valueChanges.pipe(
       map(value => {
         const x = Array.from(value);
         for (let i = 0; i < x.length; i++) {
-          if (i === t) {
-            t += 4;
+          if ([3,7,11,15,19].includes(i)) {
             x.splice(i, 0, '-')
           }
         }
-        return { num: x.join(''), t };
+        return { num: x.join('') };
       })
     ).subscribe((e) => {
       console.log(e)
