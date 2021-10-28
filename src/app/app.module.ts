@@ -11,12 +11,17 @@ import { CardModule } from './card/card.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaskModule } from 'ngx-mask';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CounterComponent } from './counter/counter.component';
+import { CounterModule } from './counter/counter.module';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DetailComponent
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,8 +34,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     }),
     NgxMaskModule.forRoot(),
     CardModule,
+    CounterModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]
