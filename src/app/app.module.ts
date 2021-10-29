@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +15,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CounterModule } from './counter/counter.module';
 import { EffectsModule } from '@ngrx/effects';
 import { CounterSliceModule } from './counter-slice/counter-slice.module';
+import { QrCodeHdModule } from './qr-code/qr-code-hd.module';
+import { OutletDialogModule } from './outlet-dialog/outlet-dialog.module';
+import { OutletEntryDialogModule } from './outlet-entry-dialog/outlet-entry-dialog.module';
+import { DialogShareService } from './core/services/dialog-share.service';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +38,9 @@ import { CounterSliceModule } from './counter-slice/counter-slice.module';
     }),
     NgxMaskModule.forRoot(),
     CardModule,
+    QrCodeHdModule,
+    OutletDialogModule,
+    OutletEntryDialogModule,
     CounterModule,
     CounterSliceModule,
     BrowserAnimationsModule,
@@ -42,7 +49,8 @@ import { CounterSliceModule } from './counter-slice/counter-slice.module';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DialogShareService],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+}

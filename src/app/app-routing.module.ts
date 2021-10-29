@@ -4,6 +4,8 @@ import { DetailComponent } from './detail/detail.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { CounterSliceComponent } from './counter-slice/counter-slice.component';
+import { QrCodeHdComponent } from './qr-code/qr-code.component';
+import { OutletEntryDialogComponent } from './outlet-entry-dialog/outlet-entry-dialog.component';
 
 const routes: Routes = [
   {
@@ -15,7 +17,9 @@ const routes: Routes = [
     component: DetailComponent
   },
   { path: 'counter', component: CounterComponent },
-  { path: 'counter-slice', component: CounterSliceComponent }
+  { path: 'counter-slice', component: CounterSliceComponent },
+  { path: 'qr-code', component: QrCodeHdComponent },
+  { path: 'outlet-dialog', component: OutletEntryDialogComponent }
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

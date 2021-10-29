@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
   constructor() {
   }
   ngOnInit(): void {
+
+
     this.maskInput.valueChanges.pipe(
       map(value => {
         const x = Array.from(value);
@@ -26,8 +28,12 @@ export class HomeComponent implements OnInit {
         return { num: x.join('') };
       })
     ).subscribe((e) => {
-      console.log(e)
+      console.log(e)  //execute result in here
     })
+
+
+
+
     setTimeout(() => {
       this.card = false;
     }, 2000)
@@ -44,7 +50,6 @@ export class HomeComponent implements OnInit {
             clientY2: e[1].clientY,
           }
         ];
-        console.log(x)
       }
     )
   }
